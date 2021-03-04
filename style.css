@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+}
+
+#grid-container {
+    width: fit-content;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(16, 25px);
+    grid-auto-rows: 25px;
+    border: 1px solid black;
+}
+
+.grid-element {
+    border: .05px solid black;
+}
