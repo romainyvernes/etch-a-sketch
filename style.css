@@ -2,15 +2,35 @@ body {
     text-align: center;
 }
 
-#grid-container {
+#main-container {
+    width: 800px;
+    background-color: rgb(206, 1, 1);
+    border-radius: 20px;
+    margin: 5vh auto;
+    padding: 20px 0 50px 0;
+}
+
+h1 {
     width: fit-content;
+    color: yellow;
+    font-family: 'Akaya Telivigala', serif;
+    margin: 0 0 0 10px;
+    text-align: left;
+    font-size: 50px;
+    transform: rotate(-10deg);
+}
+
+#grid-container {
+    width: 600px;
+    height: 400px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(16, 25px);
-    grid-auto-rows: 25px;
-    border: 1px solid black;
+    grid-auto-rows: 1fr;
+    gap: 1px;
+    box-sizing: border-box;
 }
 
 .grid-element {
-    border: .05px solid black;
+    box-shadow: 0 0 0 1px grey;
+    background-color: lightgrey;
 }

@@ -1,24 +1,44 @@
-function changeColor() {
-    this.style.backgroundColor = 'green';
+function clearGrid() {
+    const blocks = document.querySelectorAll('.grid-element');
+    blocks.forEach(block => block.remove());
 }
 
-
-const pageBody = document.querySelector('body');
-const container = document.createElement('div');
-container.id = 'grid-container';
-
-
-// create grid
-for (let i = 0; i < 16; i++) {
-    for (let j = 0; j < 16; j++) {
-        const gridElement = document.createElement('div');
-        gridElement.classList.add('grid-element');
-        container.appendChild(gridElement);
+function drawGrid() {
+    const container = document.querySelector('#grid-container');
+    const desiredBlockCount = document.querySelector('#block-count').value;
+    container.style.gridTemplateColumns = `repeat(${desiredBlockCount}, 1fr)`;
+    
+    for (let i = 0; i < desiredBlockCount; i++) {
+        for (let j = 0; j < desiredBlockCount; j++) {
+            const gridElement = document.createElement('div');
+            gridElement.classList.add('grid-element');
+            gridElement.addEventListener('mouseover', changeColor);
+            container.appendChild(gridElement);
+        }
     }
 }
 
-// insert grid into html
-pageBody.appendChild(container);
+function changeColor(e) {
+    e.target.style.backgroundColor = 'green';
+}
 
-const gridBlocks = document.querySelectorAll('.grid-element');
-gridBlocks.forEach(gridBlock => gridBlock.addEventListener('mouseover', changeColor));
+function clearColor() {
+    const blocks = document.querySelectorAll('.grid-element');
+    blocks.forEach(block => {
+        block.style.backgroundColor = 'lightgrey';
+    });
+}
+
+// enable range input field and monitor future changes
+const rangeInput = document.querySelector('#block-count');
+rangeInput.addEventListener('input', e => {
+    clearGrid();
+    drawGrid();
+});
+
+// enable clear button
+const clearBtn = document.querySelector('#clear');
+clearBtn.addEventListener('click', clearColor);
+
+const body = document.querySelector('body');
+body.onload = drawGrid();
