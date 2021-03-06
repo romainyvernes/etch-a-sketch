@@ -11,10 +11,25 @@
 
             <div id="grid-container"></div>
 
-            <button id="clear">Clear</button>
-            <div>
-                <label for="block-count">Grid size</label>
-                <input type="range" name="block-count" id="block-count" min="2" max="50">
+            <div id="footer">
+                <div id="color-selection">
+                    <p>Choose your color</p>
+                    <div id="color-options">
+                        <button id="grayscale">GRAYSCALE</button>
+                        <button id="random">RANDOM</button>
+                        <div id="custom-container">
+                            <label for="custom-color">MAKE YOUR OWN</label>
+                            <input type="color" name="custom-color" id="custom-color" value="#059f05">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="grid-size">
+                    <label for="block-count">Grid size</label>
+                    <input type="range" name="block-count" id="block-count" min="2" max="50">
+                </div>
+
+                <button id="clear">CLEAR</button>
             </div>
         </div>
 

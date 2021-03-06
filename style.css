@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    font-family: 'Akaya Telivigala', serif;
 }
 
 #main-container {
@@ -7,13 +8,12 @@ body {
     background-color: rgb(206, 1, 1);
     border-radius: 20px;
     margin: 5vh auto;
-    padding: 20px 0 50px 0;
+    padding: 20px 0 20px 0;
 }
 
 h1 {
     width: fit-content;
     color: yellow;
-    font-family: 'Akaya Telivigala', serif;
     margin: 0 0 0 10px;
     text-align: left;
     font-size: 50px;
@@ -32,5 +32,97 @@ h1 {
 
 .grid-element {
     box-shadow: 0 0 0 1px grey;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+button, #custom-container {
+    font-family: 'Akaya Telivigala', serif;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 40px;
+    width: 105px;
+    font-weight: bold;
+    font-size: 17px;
+    outline: none;
     background-color: lightgrey;
+    cursor: pointer;
+}
+
+button:hover, #custom-container:hover {
+    border: 2px solid yellow;
+}
+
+#color-selection {
+    display: flex;
+    flex-direction: column;
+}
+
+#color-selection p, label[for="block-count"] {
+    margin: 5px 0;
+    font-size: 20px;
+    color: yellow;
+}
+
+#color-options {
+    display: flex;
+}
+
+#random {
+    margin: 0 10px;
+}
+
+#custom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 190px;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+label[for="custom-color"] {
+    cursor: pointer;
+}
+
+#custom-color {
+    margin-left: 10px;
+    width: 20px;
+    cursor: pointer;
+}
+
+#grid-size {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+#block-count {
+    -webkit-appearance: none;
+    background: linear-gradient(to right, yellow 0%, yellow 50%, #fff 50%, #fff 100%);
+    border: .5px solid grey;
+    border-radius: 15px;
+    height: 7px;
+    width: 170px;
+    outline: none;
+    cursor: pointer;
+}
+
+#block-count::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 1px solid grey;
+    background-color: yellow;
+}
+
+#clear {
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
 }
